@@ -4,8 +4,8 @@
 #define ACK   1
 #define NACK  0
 
-void twiInit();
-uint8_t twiPut(uint8_t addr, uint8_t size, uint8_t *data);
-uint8_t twiGet(uint8_t addr, uint8_t size, uint8_t *data);
+void twi_init();
+uint8_t twi_put(uint8_t addr, uint8_t size, const uint8_t *data);
+uint8_t twi_get(uint8_t addr, uint8_t size, uint8_t *data);
 
 #endif

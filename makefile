@@ -1,9 +1,9 @@
 # Define those in project:
 #
-F_CPU ?= 16000000
+F_CPU ?= 8000000
 MCU ?= atmega328p
 NAME ?= main
-OBJS ?= ports.c adc.c twi.c uart.c main.c
+OBJS ?= pins.cc adc.cc twi.cc uart.cc main.cc
 
 DUDEMCU ?= $(MCU)
 DUDEPORT ?= /dev/ttyACM0
@@ -11,8 +11,8 @@ DUDEPROGRAMER ?= usbasp
 
 #################
 
-CC = avr-gcc
-override CFLAGS += -Os -DF_CPU=$(F_CPU) -mmcu=$(MCU) -Wall -g -std=gnu99
+CC = avr-g++
+override CFLAGS += -Os -DF_CPU=$(F_CPU) -mmcu=$(MCU) -Wall -g -std=gnu++98
 
 #################
 all: $(NAME) size

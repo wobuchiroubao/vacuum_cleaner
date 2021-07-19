@@ -10,7 +10,13 @@
 #define ADC6  6
 #define ADC7  7
 
-void adcInit();
-uint16_t getAnalog(uint8_t pin);
+class AnalogPin {
+public:
+  AnalogPin(uint8_t pin);
+  uint16_t get() const;
+  operator uint16_t() const;
+private:
+  uint8_t pin_;
+};
 
 #endif

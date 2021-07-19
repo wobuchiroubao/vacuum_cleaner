@@ -1,7 +1,7 @@
 #include <avr/io.h>
 
 #include "adc.h"
-#include "ports.h"
+#include "pins.h"
 #include "uart.h"
 #include "twi.h"
 
