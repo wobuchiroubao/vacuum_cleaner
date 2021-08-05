@@ -13,6 +13,7 @@
 class AnalogPin {
 public:
   AnalogPin(uint8_t pin);
+  void set(uint16_t val);
   uint16_t get() const;
   operator uint16_t() const;
 private:

@@ -12,7 +12,7 @@ DUDEPROGRAMER ?= usbasp
 #################
 
 CC = avr-g++
-override CFLAGS += -Os -DF_CPU=$(F_CPU) -mmcu=$(MCU) -Wall -g -std=gnu++98
+override CFLAGS += -Os -DF_CPU=$(F_CPU) -mmcu=$(MCU) -Wall -g -std=c++17
 
 #################
 all: $(NAME) size

@@ -8,7 +8,7 @@ enum {
 
 class DigitalPin {
 public:
-  DigitalPin(uint8_t& port, uint8_t pin);
+  DigitalPin(volatile uint8_t& port, uint8_t pin);
   void init_in();
   void init_out();
   int8_t set();

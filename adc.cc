@@ -6,6 +6,10 @@ AnalogPin::AnalogPin(uint8_t pin)
 : pin_(pin)
 {}
 
+void set(uint16_t val) {
+  
+}
+
 uint16_t AnalogPin::get() const {
  //select Vref=AVcc + ADC channel with safety mask
  ADMUX = 0x40 | (pin_ & 0x0F);

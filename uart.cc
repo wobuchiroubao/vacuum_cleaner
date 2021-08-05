@@ -31,8 +31,29 @@ void uart_put(uint8_t size, const uint8_t *data) {
   }
 }
 
+void uart_put_str(const char *data) {
+  for (uint8_t i = 0; data[i] != '\0'; ++i) {
+    uart_put_byte(data[i]);
+  }
+}
+
 void uart_get(uint8_t size, uint8_t *data) {
   for (uint8_t i = 0; i < size; ++i) {
     data[i] = uart_get_byte();
   }
+}
+
+void uart_get_str(uint8_t max_size, char *data) {
+  if (max_size == 0) {
+    return;
+  }
+  uint8_t i;
+  data[0] = uart_get_byte();
+  for (i = 1; i < max_size && data[i - 1] != ' '; ++i) {
+    data[i] = uart_get_byte();
+  }
+  if (data[i - 1] != ' ') {
+    for (; uart_get_byte() != ' ';) {}
+  }
+  data[i - 1] = '\0';
 }

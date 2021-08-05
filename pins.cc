@@ -2,7 +2,7 @@
 
 #include "pins.h"
 
-DigitalPin::DigitalPin(uint8_t& port, uint8_t pin)
+DigitalPin::DigitalPin(volatile uint8_t& port, uint8_t pin)
 : port_(&port)
 , pin_(pin)
 {}
